@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>{$post.title}</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ian Harris" />
+    <meta name="description" content="{$post.description}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- OpenGraph/Twitter card? -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- not great
+    {#foreach icon of [
+      {rel: 'apple-touch-icon-precomposed', sizes: ['144', '114', '72']},
+      {rel: 'apple-touch-icon-precomposed', path: ['favicon_57.png', 'favicon_32.png']},
+      ]}
+      {#if $icon.sizes}
+      <link {$icon.rel} sizes="{$icon.sizes.first}x{$icon.sizes.first}" href="static/images/favicon_{$icon.sizes.first}.png" />
+      {#do $icon.sizes.pop()}
+      {#else if $icon.path}
+      <link {$icon.rel} href="static/images/{$icon.path.first}" />
+      {#do $icon.path.pop()}
+    {/foreach}
+    -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>misc.</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li>Blog</li>
+        <li>Stuff</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <!-- list of blog posts -->
+        <!-- each post would have an <aside> -->
+      </article>
+    </main>
+
+    <footer>
+      <p>thanks, ian</p>
+    </footer>
+
+  </body>
+</html>
