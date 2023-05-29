@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>{$post.title}</title>
+    <title>title</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ian Harris" />
-    <meta name="description" content="{$post.description}" />
+    <meta name="description" content="Homepage for Ian's stuff." />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!-- OpenGraph/Twitter card? -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -34,21 +34,28 @@
 
     <nav>
       <ul>
-        <li>Blog</li>
-        <li>Stuff</li>
-        <li>Contact</li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/stuff">Stuff</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
 
     <main>
       <article>
-        <!-- list of blog posts -->
-        <!-- each post would have an <aside> -->
+        <h1>What is this</h1>
+        <p>Page for my writing and projects.</p>
+        <ul>
+          <li><a href="stuff/letsfocus">letsfoc.us</a></li>
+          <li><a href="stuff/ispentmoney">ispent.money</a></li>
+          <li><a href="stuff/playsomecards">playsomecards.com</a></li>
+          <li><a href="stuff/pdxtheaters">pdxtheaters.com</a></li>
+          <li><a href="stuff/picross">picross</a></li>
+        </ul>
       </article>
     </main>
 
     <footer>
-      <p>thanks, ian</p>
+      <p>thanks, <a href="/contact">ian</a></p>
     </footer>
 
   </body>
