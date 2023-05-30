@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+LOCAL=0
+
+while getopts ":l:" opt; do
+  case "${opt}" in
+    l)
+      LOCAL=1
+      ;;
+    *)
+      ;;
+  esac
+done
+
 mkdir build &> /dev/null
 
 for file in src/post/*.md; do
@@ -8,11 +20,13 @@ done
 
 tar czf build/blog.tar.gz src
 
-scp build/blog.tar.gz $BLOG_SFTP_ADDRESS:
+if [ -z $LOCAL ]; then
+  scp build/blog.tar.gz $BLOG_SFTP_ADDRESS:
 
-ssh $BLOG_SSH_ADDRESS /bin/bash << EOF
-find $BLOG_DIR -mindepth 1 -delete
-tar xzf blog.tar.gz -C $BLOG_DIR --strip-components=1
+  ssh $BLOG_SSH_ADDRESS /bin/bash << EOF
+  find $BLOG_DIR -mindepth 1 -delete
+  tar xzf blog.tar.gz -C $BLOG_DIR --strip-components=1
 EOF
+fi
 
 exit $?
