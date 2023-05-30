@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-echo "test"
-exit 1
+mkdir build &> /dev/null
+tar czf build/blog.tar.gz src
+scp build/blog.tar.gz $BLOG_SFTP_ADDRESS:
+ssh $BLOG_SSH_ADDRESS /bin/bash << EOF
+tar xzf blog.tar.gz -C $BLOG_DIR --strip-components=1
+EOF
+
+exit $?

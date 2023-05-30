@@ -5,3 +5,5 @@ install:
 
 clean:
 	rm .git/hooks/pre-push
+	rm build/blog.tar.gz
+	rmdir build
